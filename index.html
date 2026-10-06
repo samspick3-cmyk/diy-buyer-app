@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#e85d04" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="DIY Supply Buyer" />
+    <title>DIY Supply Buyer App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <h1>DIY Supply Buyer App</h1>
+    </header>
+
+    <main>
+      <section id="job-view" class="view">
+        <p id="job-meta" class="job-meta" hidden></p>
+
+        <section class="card" aria-labelledby="customer-heading">
+          <h2 id="customer-heading">Customer Information</h2>
+          <label>
+            Customer Name
+            <input id="customer-name" type="text" autocomplete="name" />
+          </label>
+          <label>
+            Phone Number
+            <input id="phone" type="tel" inputmode="tel" autocomplete="tel" />
+          </label>
+          <label>
+            Property Address
+            <textarea id="address" rows="2" autocomplete="street-address"></textarea>
+          </label>
+          <label>
+            Notes
+            <textarea id="notes" rows="3"></textarea>
+          </label>
+        </section>
+
+        <section class="card" aria-labelledby="items-heading">
+          <h2 id="items-heading">Items</h2>
+          <div id="items" class="items"></div>
+          <div class="grand-total">
+            <span>Grand Total Job Cost</span>
+            <strong id="grand-total">$0.00</strong>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="button" id="save-job" class="btn btn-primary">Save Job</button>
+          <button type="button" id="new-job" class="btn btn-secondary">New Job</button>
+          <button type="button" id="view-jobs" class="btn btn-outline">View Saved Jobs</button>
+        </div>
+      </section>
+
+      <section id="jobs-view" class="view" hidden>
+        <h2>Saved Jobs</h2>
+        <label class="search-label">
+          Search jobs
+          <input id="job-search" type="search" placeholder="Name, address, job ID…" />
+        </label>
+        <div id="jobs-list" class="jobs-list"></div>
+        <div class="actions">
+          <button type="button" id="back-to-job" class="btn btn-primary">Back to Job</button>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" hidden role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
